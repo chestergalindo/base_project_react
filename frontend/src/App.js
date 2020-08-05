@@ -1,7 +1,10 @@
 import React from 'react';
+import Home from './components/templates/Home/Home'
 
 export const App = () => {
-  return <div>hola</div>;
+  return (
+    <Home />
+  )
 };
 
 export default App;
