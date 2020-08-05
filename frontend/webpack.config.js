@@ -1,10 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'js/app.bundle.js'
+    filename: 'js/app.bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -17,19 +17,19 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.(s*)css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
@@ -38,14 +38,14 @@ module.exports = {
           options: {
             limit: 10000,
             name: '[hash].[ext]',
-            outputPath: 'assets'
-          }
-        }
-      }
-    ]
-  },  
+            outputPath: 'assets',
+          },
+        },
+      },
+    ],
+  },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -53,7 +53,7 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash].css'
-    })
+      filename: 'css/[name].[hash].css',
+    }),
   ],
-}
+};
