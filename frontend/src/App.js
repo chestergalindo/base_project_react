@@ -1,10 +1,8 @@
 import React from 'react';
-import Home from './components/templates/Home/Home'
+import Home from './components/templates/Home/Home';
 
 export const App = () => {
-  return (
-    <Home />
-  )
+  return <Home />;
 };
 
 export default App;
